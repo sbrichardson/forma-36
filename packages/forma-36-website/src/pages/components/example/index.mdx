@@ -1,18 +1,31 @@
 ---
-title: 'Example Component'
+title: 'Entry Card'
 type: 'component'
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/FormLabel'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlabel--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/EntryCard'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-card-entrycard--default'
 ---
 
-Add a description about the component and its function in the user interface here
-E.g: TextLinks communicate actions and highlight linked resources to users.
-
-Add an example of the component like this:
+Use a entry card to display condensed info of an entry.
 
 ```jsx
 <React.Fragment>
-  <Button buttonType="primary">Primary</Button>
+  <EntryCard
+    title="Closer"
+    description="Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett."
+    status="published"
+    statusIcon="Clock"
+    contentType="Album"
+    dropdownListElements={
+      <React.Fragment>
+        <DropdownList>
+          <DropdownListItem isTitle>Actions</DropdownListItem>
+          <DropdownListItem href="#">Edit (with href)</DropdownListItem>
+          <DropdownListItem>Download</DropdownListItem>
+          <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
+        </DropdownList>
+      </React.Fragment>
+    }
+  />
 </React.Fragment>
 ```
 
@@ -26,11 +39,8 @@ Add an example of the component like this:
 
 ## Best practices <a name="best-practices" />
 
-Add best practices for usage in the UI, think about copy and accessibility or general UX guidelines
-E.g (Button Component):
-
-- Position buttons consistently in the interface
-- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+- Use the Entry Card for embedding references to entries only.
+- Don't use the Entry Card to represent a list of entries or assets please refer to the EntityList component for this purpose.
 
 ## Variations <a name="variations" />
 
